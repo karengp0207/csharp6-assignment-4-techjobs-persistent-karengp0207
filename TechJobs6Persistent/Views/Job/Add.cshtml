@@ -7,9 +7,9 @@
 <form asp-controller="Job" asp-action="Add" method="post">
 
     <div class="form-group">
-        <label asp-for="JobName">Name</label>
-        <input class="form-control" asp-for="JobName" />
-        <span asp-validation-for="JobName" class="text-danger"></span>
+        <label asp-for="Name">Name</label>
+        <input class="form-control" asp-for="Name" />
+        <span asp-validation-for="Name" class="text-danger"></span>
     </div>
 
     <br />
@@ -20,14 +20,14 @@
          <a asp-controller="Employer" asp-action="Create">Add New Employer</a>
     </div>
 
-    @*<div class="form-group">
+    <div class="form-group">
         @foreach (Skill skill in Model.Skills)
         {
             <label for="@skill.Id">@skill.Id</label>
             <input type="checkbox" name="selectedSkills" value="@skill.Id" />
         }
     </div>
-    <input type="hidden" asp-for="Skills"/>*@
+    <input type="hidden" asp-for="Skills"/>
     
     <input type="submit" value="Add Job" />
 </form>

@@ -65,8 +65,8 @@ namespace TechJobs6Persistent.Controllers
         {
             if (ModelState.IsValid)
             {
-                int jobId = addSkillViewModel.JobId;
-                int skillId = addSkillViewModel.SkillId;
+                int jobId = (int)addSkillViewModel.JobId;
+                int skillId = (int)addSkillViewModel.SkillId;
 
                 Job theJob = context.Jobs.Include(s => s.Skills).Where(j => j.Id == jobId).First();
                 Skill theSkill = context.Skills.Where(s => s.Id == skillId).First();

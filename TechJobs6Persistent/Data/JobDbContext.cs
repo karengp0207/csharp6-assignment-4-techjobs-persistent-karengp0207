@@ -23,6 +23,11 @@ namespace TechJobs6Persistent.Data
             modelBuilder.Entity<Job>().HasOne(p => p.Employer).WithMany(b => b.Jobs);   //from Task2 instructions
 
             //set up your connection for many to many (skills to jobs)
+
+            modelBuilder.Entity<Job>()
+                  .HasMany(e => e.Skills)
+                  .WithMany(e => e.Jobs)
+                  .UsingEntity(j => j.ToTable("JobSkills"));
         }
     }
 }

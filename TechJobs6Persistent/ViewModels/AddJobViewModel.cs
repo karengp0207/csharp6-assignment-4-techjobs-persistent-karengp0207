@@ -9,18 +9,18 @@ namespace TechJobs6Persistent.ViewModels
     {
         [Required(ErrorMessage = "Name of Job is required.")]
         [StringLength(50, MinimumLength = 2, ErrorMessage = "Job Name should be between 2-50 characters.")]
-        public string? JobName { get; set; }
+        public string? Name { get; set; }
 
         [Required(ErrorMessage = "Job ID is required.")]
         public int? EmployerId { get; set; }
         public List<SelectListItem>? ListofEmployers { get; set; } = new List<SelectListItem>();
-        //public List<Skill> Skills { get; set; }
+        public List<Skill> Skills { get; set; }
 
         public AddJobViewModel() { }
         public AddJobViewModel(List<Employer> possibleEmployers)
         {
             //ListofEmployers = new List<SelectListItem>();
-            //Skills = new List<Skill> { };
+            Skills = new List<Skill> { };
 
             foreach(var employer in possibleEmployers)
             {

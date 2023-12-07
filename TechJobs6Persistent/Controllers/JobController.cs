@@ -37,7 +37,7 @@ namespace TechJobs6Persistent.Controllers
         {
             List<Employer>employers = context.Employers.ToList();
             AddJobViewModel addJobViewModel = new AddJobViewModel(employers);       //List<Employer> employers = context.Employers.ToList();
-            //List<Skill> skills = context.Skills.ToList();              //this method needs to contain a list of Employer objects
+            List<Skill> skills = context.Skills.ToList();              //this method needs to contain a list of Employer objects
                                                                        //which it pulls from the Employer dbContext
                                                                        //create an instance of the AddJobViewModel which is 
                                                                        //passed the list of employer objects
@@ -54,9 +54,9 @@ namespace TechJobs6Persistent.Controllers
                 Job newJob = new Job
                 {                                                    //and make sure that any validation conditions are
                                                                      //met before creating the new Job object
-                    Name = addJobViewModel.JobName,
+                    Name = addJobViewModel.Name,
                     Employer = employer,
-                    //Skills = addJobViewModel.Skills.ToList()
+                    Skills = addJobViewModel.Skills.ToList()
                 };
                 context.Jobs.Add(newJob);
                 context.SaveChanges();
