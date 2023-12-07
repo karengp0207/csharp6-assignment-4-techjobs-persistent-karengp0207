@@ -1,4 +1,5 @@
 ﻿using System;
+//using System.Xml.Linq;
 using Microsoft.Extensions.Logging;
 
 namespace TechJobs6Persistent.Models
@@ -13,15 +14,25 @@ namespace TechJobs6Persistent.Models
 
         public ICollection<Skill>? Skills { get; set; }
 
-        public Job(string name)
-        {
-            Name = name;
-            Skills = new List<Skill>();
-        }
+        public Job() { }
 
-        public Job()
-        {
+        public Job(string name)
+        { 
+            Name = name;
+            //Skills = new List<Skill>();
         }
+        /*public override string? ToString()
+        {
+            return JobName;
+        }
+        public override bool Equals(object? obj)
+        {
+            return obj is Job @job && Id == @job.Id;
+        }
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(Id);
+        }*/
     }
 }
 

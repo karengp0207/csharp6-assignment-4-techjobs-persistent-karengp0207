@@ -30,7 +30,7 @@ namespace TechJobs6Persistent.Migrations
 
                     b.HasIndex("SkillsId");
 
-                    b.ToTable("JobSkills", (string)null);
+                    b.ToTable("JobSkill");
                 });
 
             modelBuilder.Entity("TechJobs6Persistent.Models.Employer", b =>
@@ -40,11 +40,9 @@ namespace TechJobs6Persistent.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Location")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.HasKey("Id");

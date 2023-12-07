@@ -1,6 +1,9 @@
-﻿<h1>Employer: Name</h1>
+﻿@model Employer
+
+<h1>Employer: Name</h1>
 
 <div>
-    <p>Name: name</p>
-    <p>Location: location</p>
+    <p>@Model.Id</p>
+    <p>@Model.Name</p>
+    <p>@Model.Location</p>
 </div>
