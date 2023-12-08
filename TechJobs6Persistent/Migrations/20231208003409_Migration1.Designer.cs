@@ -11,7 +11,7 @@ using TechJobs6Persistent.Data;
 namespace TechJobs6Persistent.Migrations
 {
     [DbContext(typeof(JobDbContext))]
-    [Migration("20231207060119_Migration1")]
+    [Migration("20231208003409_Migration1")]
     partial class Migration1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

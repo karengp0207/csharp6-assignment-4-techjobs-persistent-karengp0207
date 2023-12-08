@@ -28,7 +28,10 @@ namespace TechJobs6Persistent.Controllers
         public IActionResult Index()
         {
             List<Job> jobs = context.Jobs.ToList(); //=new List<Job>(JobData.GetAll());
-
+            foreach(Job job in jobs)
+            {
+                job.Employer = context.Employers.Find(job.EmployerId);
+            }
             return View(jobs);
         }
 
